@@ -79,3 +79,5 @@ A global instance of Random that you can use to generate random values. Or you c
 ## Microseconds ##
 A global instance of Microseconds (based off of Milliseconds) that you can use for timing.
 
+## Globals ##
+Change kGameSeconds, kGamesToPlay for testing purposes.
