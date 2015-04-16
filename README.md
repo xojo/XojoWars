@@ -15,6 +15,8 @@ below.
 Add an instance of your class to MainWindow.CreatePlayers. For example:
 
     AddPlayer(New Follower)
+    
+Project should be emailed to paul@xojo.com by 8am CT on May 1, 2015. Use the subject line "XDC 2015 Contest". The contest is held at the end of the conference, 4pm CT May 1, 2015.
 
 
 ### Game Notes ###
