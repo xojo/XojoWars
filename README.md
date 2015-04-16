@@ -1,8 +1,9 @@
 # XojoWars: XDC 2015 Game Contest #
 
+XojoWars is a space battle between 4 or more ships that you program. Your ship fights against other ships in a series of battles. You score is the number of ships you hit minus the number of times you get hit. The ships with the top 4 scores play a championship round after all the battles are completed.
 
 ### To Play ###
-
+1. Use Xojo 2015 Release 2!
 1. Implement ShipInterface
 1. Add an instance to MainWindow.CreatePlayers
 
