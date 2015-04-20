@@ -33,7 +33,7 @@ The top 4 scores after all the battles are finished play in a championship battl
 If there is a tie at the end of the championship round, 10 seconds are added to the clock and the battle continues in tie-breaker mode until there is a winner.
 
 ### Rules ###
-* No Introspection usage!
+* No cheating/hacking using things such as introspection, tweaking thread priorities or anything else that is obviously outside the intent of the game.
 * Do not attempt to access information outside of what you are provided below.
 * Have Fun!
 
