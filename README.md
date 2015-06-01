@@ -1,4 +1,4 @@
-# Xojo Wars: XDC 2015 Game Contest #
+# Xojo Wars: Game Contest #
 
 Xojo Wars is a space battle between 4 ships flying and firing at each other. You implement an algorithm to control your own ship as it plays through a series of battles with other players. Your score is the number of ships you hit minus the number of times you get hit. After all the battles are completed, the ships with the top 4 scores play a championship round to determine the winner.
 
