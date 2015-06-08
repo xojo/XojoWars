@@ -51,6 +51,9 @@ a missile that has been fired. Missiles disappear when:
 Return a String containing your Full Name. You must use your full name
 in order to claim victory!
 
+## GotHit ##
+Called when your ship is hit by a missile.
+
 ## NewGame(w As Integer, h As Integer, wormholes() As WormholeInfo) ##
 This is called when a new game/battle starts. You can do initial setup here.
 
@@ -78,8 +81,8 @@ Return True to teleport your ship. You can use two Teleports per game.
 ## Rand ##
 A global instance of Random that you can use to generate random values. Or you can use Xojo.Math.RandomInt (if using Xojo 2015 Release 2).
 
-## Microseconds ##
-A global instance of Microseconds (based off of Milliseconds) that you can use for timing.
+## Milliseconds ##
+A global instance of milliseconds (based off of Microseconds) that you can use for timing.
 
 ## Globals ##
 Change kGameSeconds, kGamesToPlay for testing purposes.
