@@ -86,3 +86,7 @@ A global instance of milliseconds (based off of Microseconds) that you can use f
 
 ## Globals ##
 Change kGameSeconds, kGamesToPlay for testing purposes.
+
+## With Thanks ##
+To Kem Tekinay.
+
