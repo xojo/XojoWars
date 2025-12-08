@@ -14,13 +14,13 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function GetEnemyPosition(shipX As Integer, shipY As Integer, enemies() As EnemyInfo) As Xojo.Core.Point
-		  Dim minDistance As Double = 99999
-		  Dim closest As Xojo.Core.Point
-		  Dim myPos As New Xojo.Core.Point(shipX, shipY)
+		Private Function GetEnemyPosition(shipX As Integer, shipY As Integer, enemies() As EnemyInfo) As Point
+		  Var minDistance As Double = 99999
+		  Var closest As Point
+		  Var myPos As New Point(shipX, shipY)
 		  
 		  For Each e As EnemyInfo In enemies
-		    Dim p As New Xojo.Core.Point(e.X, e.Y)
+		    Var p As New Point(e.X, e.Y)
 		    
 		    If myPos.DistanceTo(p) < minDistance Then
 		      minDistance = myPos.DistanceTo(p)
@@ -49,7 +49,7 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function Moving_E(enemyLocation As Xojo.Core.Point, shipX As Integer, shipY As Integer) As RotationTypes
+		Private Function Moving_E(enemyLocation As Point, shipX As Integer, shipY As Integer) As RotationTypes
 		  If shipX > enemyLocation.X Then
 		    Return RotationTypes.Right
 		  ElseIf shipY < enemyLocation.Y Then
@@ -61,7 +61,7 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function Moving_N(enemyLocation As Xojo.Core.Point, shipX As Integer, shipY As Integer) As RotationTypes
+		Private Function Moving_N(enemyLocation As Point, shipX As Integer, shipY As Integer) As RotationTypes
 		  If shipX < enemyLocation.X Then
 		    Return RotationTypes.Right
 		  ElseIf shipX > enemyLocation.X Then
@@ -71,7 +71,7 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function Moving_NE(enemyLocation As Xojo.Core.Point, shipX As Integer, shipY As Integer) As RotationTypes
+		Private Function Moving_NE(enemyLocation As Point, shipX As Integer, shipY As Integer) As RotationTypes
 		  If shipX < enemyLocation.X And shipY < enemyLocation.Y Then
 		    Return RotationTypes.Right
 		  ElseIf shipX > enemyLocation.X Then
@@ -81,7 +81,7 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function Moving_NW(enemyLocation As Xojo.Core.Point, shipX As Integer, shipY As Integer) As RotationTypes
+		Private Function Moving_NW(enemyLocation As Point, shipX As Integer, shipY As Integer) As RotationTypes
 		  If shipX > enemyLocation.X And shipY < enemyLocation.Y Then
 		    Return RotationTypes.Left
 		  ElseIf shipX < enemyLocation.X Then
@@ -91,7 +91,7 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function Moving_S(enemyLocation As Xojo.Core.Point, shipX As Integer, shipY As Integer) As RotationTypes
+		Private Function Moving_S(enemyLocation As Point, shipX As Integer, shipY As Integer) As RotationTypes
 		  If shipX < enemyLocation.X Then
 		    Return RotationTypes.Left
 		  ElseIf shipX > enemyLocation.X Then
@@ -101,7 +101,7 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function Moving_SE(enemyLocation As Xojo.Core.Point, shipX As Integer, shipY As Integer) As RotationTypes
+		Private Function Moving_SE(enemyLocation As Point, shipX As Integer, shipY As Integer) As RotationTypes
 		  If shipX > enemyLocation.X Then
 		    Return RotationTypes.Right
 		  ElseIf shipY >= enemyLocation.Y And shipX <= enemyLocation.X Then
@@ -111,7 +111,7 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function Moving_SW(enemyLocation As Xojo.Core.Point, shipX As Integer, shipY As Integer) As RotationTypes
+		Private Function Moving_SW(enemyLocation As Point, shipX As Integer, shipY As Integer) As RotationTypes
 		  If shipX < enemyLocation.X Then
 		    Return RotationTypes.Left
 		  ElseIf shipX > enemyLocation.X And shipY >= enemyLocation.Y Then
@@ -121,7 +121,7 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function Moving_W(enemyLocation As Xojo.Core.Point, shipX As Integer, shipY As Integer) As RotationTypes
+		Private Function Moving_W(enemyLocation As Point, shipX As Integer, shipY As Integer) As RotationTypes
 		  If shipX < enemyLocation.X Then
 		    Return RotationTypes.Right
 		  ElseIf shipY > enemyLocation.Y Then
@@ -140,7 +140,7 @@ Implements ShipInterface
 
 	#tag Method, Flags = &h0
 		Function Rotate(shipX As Integer, shipY As Integer, Direction As Directions, activeShot As Boolean, enemies() As EnemyInfo) As RotationTypes
-		  Dim enemyLocation As Xojo.Core.Point = GetEnemyPosition(shipX, shipY, enemies)
+		  Var enemyLocation As Point = GetEnemyPosition(shipX, shipY, enemies)
 		  If enemyLocation = Nil Then Return RotationTypes.None
 		  
 		  shoot = WithinRange(enemyLocation, shipX, shipY)
@@ -181,8 +181,8 @@ Implements ShipInterface
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function WithinRange(enemy As Xojo.Core.Point, shipX As Integer, shipY As Integer) As Boolean
-		  Dim myShip As New Xojo.Core.Point(shipX, shipY)
+		Private Function WithinRange(enemy As Point, shipX As Integer, shipY As Integer) As Boolean
+		  Var myShip As New Point(shipX, shipY)
 		  
 		  If myShip.DistanceTo(enemy) < 200 Then
 		    Return True
@@ -209,6 +209,7 @@ Implements ShipInterface
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -216,18 +217,23 @@ Implements ShipInterface
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -235,6 +241,7 @@ Implements ShipInterface
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

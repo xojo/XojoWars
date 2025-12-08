@@ -5,14 +5,14 @@ Protected Class Missile
 		  // Create a missile at the starting position and heading in
 		  // in the direction the ship is pointing.
 		  
-		  Dim offset As Integer = 20
+		  Var offset As Integer = 20
 		  
 		  X = startX + offset
 		  Y = startY + offset
 		  
 		  Self.Rotation = rotation
 		  
-		  StartPosition = New Xojo.Core.Point(X, Y)
+		  StartPosition = New Point(X, Y)
 		End Sub
 	#tag EndMethod
 
@@ -20,15 +20,15 @@ Protected Class Missile
 		Sub Draw(g As Graphics)
 		  // Draw the missile
 		  
-		  Dim missilePic As New Picture(kWidth, kHeight)
+		  Var missilePic As New Picture(kWidth, kHeight)
 		  
-		  missilePic.Graphics.ForeColor = &cffffff
-		  missilePic.Graphics.FillRect(0, 0, _
+		  missilePic.Graphics.DrawingColor = &cffffff
+		  missilePic.Graphics.FillRectangle(0, 0, _
 		  missilePic.Graphics.Width, missilePic.Graphics.Height)
 		  
 		  // Create it as a vector so that it can be rotated in the direction
 		  // the ship is facing.
-		  Dim s As New PixmapShape(missilePic)
+		  Var s As New PixmapShape(missilePic)
 		  s.Rotation = Rotation * 0.01745329251
 		  
 		  #If TargetLinux Then
@@ -68,7 +68,7 @@ Protected Class Missile
 		    Y = Y - kSpeed
 		  End Select
 		  
-		  Dim currentPosition As New Xojo.Core.Point(X, Y)
+		  Var currentPosition As New Point(X, Y)
 		  
 		  // Missile fades away after a while
 		  If StartPosition.DistanceTo(currentPosition) > 250 Then
@@ -110,11 +110,11 @@ Protected Class Missile
 	#tag ComputedProperty, Flags = &h0
 		#tag Getter
 			Get
-			  Return New Xojo.Core.Rect(X, Y, kWidth, kHeight)
+			  Return New Rect(X, Y, kWidth, kHeight)
 			  
 			End Get
 		#tag EndGetter
-		Rect As Xojo.Core.Rect
+		Rect As Rect
 	#tag EndComputedProperty
 
 	#tag Property, Flags = &h0
@@ -122,7 +122,7 @@ Protected Class Missile
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private StartPosition As Xojo.Core.Point
+		Private StartPosition As Point
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -144,7 +144,9 @@ Protected Class Missile
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="Direction"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Directions"
 			EditorType="Enum"
 			#tag EnumValues
@@ -164,6 +166,7 @@ Protected Class Missile
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -171,23 +174,31 @@ Protected Class Missile
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Rotation"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -195,16 +206,23 @@ Protected Class Missile
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="X"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Y"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

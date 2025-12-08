@@ -1,41 +1,38 @@
-#tag Window
-Begin Window MainWindow
-   BackColor       =   &cFFFFFF00
+#tag DesktopWindow
+Begin DesktopWindow MainWindow
    Backdrop        =   0
-   CloseButton     =   False
-   Compatibility   =   ""
+   BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   Frame           =   0
+   DefaultLocation =   0
    FullScreen      =   False
-   FullScreenButton=   True
-   HasBackColor    =   False
+   HasBackgroundColor=   False
+   HasCloseButton  =   False
+   HasFullScreenButton=   True
+   HasMaximizeButton=   True
+   HasMinimizeButton=   False
+   HasTitleBar     =   True
    Height          =   750
    ImplicitInstance=   True
-   LiveResize      =   True
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   True
-   MaxWidth        =   32000
+   MaximumHeight   =   32000
+   MaximumWidth    =   32000
    MenuBar         =   220908098
    MenuBarVisible  =   True
-   MinHeight       =   64
-   MinimizeButton  =   False
-   MinWidth        =   64
-   Placement       =   0
+   MinimumHeight   =   64
+   MinimumWidth    =   64
    Resizeable      =   False
    Title           =   "Xojo Wars"
+   Type            =   0
    Visible         =   True
    Width           =   1000
-   Begin Canvas BattleCanvas
-      AcceptFocus     =   True
-      AcceptTabs      =   False
-      AutoDeactivate  =   False
+   Begin DesktopCanvas BattleCanvas
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
       Backdrop        =   0
-      DoubleBuffer    =   False
       Enabled         =   True
-      EraseBackground =   False
       Height          =   472
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -48,33 +45,30 @@ Begin Window MainWindow
       TabIndex        =   0
       TabPanelIndex   =   0
       TabStop         =   True
+      Tooltip         =   ""
       Top             =   46
       Transparent     =   False
-      UseFocusRing    =   False
       Visible         =   True
       Width           =   744
    End
    Begin Timer GameTimer
-      Height          =   32
+      Enabled         =   True
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   0
       LockedInPosition=   False
       Mode            =   2
       Period          =   5
       Scope           =   0
       TabPanelIndex   =   0
-      Top             =   0
-      Width           =   32
    End
-   Begin Label GameTimerLabel
-      AutoDeactivate  =   True
+   Begin DesktopLabel GameTimerLabel
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   38
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -89,28 +83,28 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   2
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "0"
-      TextAlign       =   1
+      TextAlignment   =   0
       TextColor       =   &c0000FF00
-      TextFont        =   "System"
-      TextSize        =   32.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   0
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   105
    End
-   Begin PushButton StartButton
-      AutoDeactivate  =   True
+   Begin DesktopButton StartButton
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   "0"
       Cancel          =   False
       Caption         =   "Start"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -120,52 +114,52 @@ Begin Window MainWindow
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   0
       TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   16
+      Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   80
    End
    Begin Timer AITimer
-      Height          =   32
+      Enabled         =   True
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   0
       LockedInPosition=   False
       Mode            =   2
       Period          =   100
       Scope           =   0
       TabPanelIndex   =   0
-      Top             =   0
-      Width           =   32
    End
-   Begin Listbox ScoreList
-      AutoDeactivate  =   True
-      AutoHideScrollbars=   True
+   Begin DesktopListBox ScoreList
+      AllowAutoDeactivate=   True
+      AllowAutoHideScrollbars=   True
+      AllowExpandableRows=   False
+      AllowFocusRing  =   True
+      AllowResizableColumns=   False
+      AllowRowDragging=   False
+      AllowRowReordering=   False
       Bold            =   False
-      Border          =   True
       ColumnCount     =   5
-      ColumnsResizable=   False
       ColumnWidths    =   "40,*,50,80,60"
-      DataField       =   ""
-      DataSource      =   ""
       DefaultRowHeight=   30
+      DropIndicatorVisible=   False
       Enabled         =   True
-      EnableDrag      =   False
-      EnableDragReorder=   False
-      GridLinesHorizontal=   3
-      GridLinesVertical=   0
-      HasHeading      =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      GridLineStyle   =   0
+      HasBorder       =   True
+      HasHeader       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       HeadingIndex    =   -1
       Height          =   212
-      HelpTag         =   ""
-      Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   " 	Name	Hits	Was Hit	Score"
@@ -177,32 +171,28 @@ Begin Window MainWindow
       LockRight       =   True
       LockTop         =   False
       RequiresSelection=   False
+      RowSelectionType=   0
       Scope           =   0
-      ScrollbarHorizontal=   False
-      ScrollBarVertical=   True
-      SelectionType   =   0
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   18.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   529
+      Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   960
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
-   Begin Label Label1
-      AutoDeactivate  =   True
+   Begin DesktopLabel Label1
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -217,39 +207,41 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   6
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Leaderboard"
-      TextAlign       =   1
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   14
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   235
    End
-   Begin Listbox LeadersList
-      AutoDeactivate  =   True
-      AutoHideScrollbars=   True
+   Begin DesktopListBox LeadersList
+      AllowAutoDeactivate=   True
+      AllowAutoHideScrollbars=   True
+      AllowExpandableRows=   False
+      AllowFocusRing  =   True
+      AllowResizableColumns=   False
+      AllowRowDragging=   False
+      AllowRowReordering=   False
       Bold            =   False
-      Border          =   True
       ColumnCount     =   4
-      ColumnsResizable=   False
       ColumnWidths    =   "20,*,50,30"
-      DataField       =   ""
-      DataSource      =   ""
       DefaultRowHeight=   -1
+      DropIndicatorVisible=   False
       Enabled         =   True
-      EnableDrag      =   False
-      EnableDragReorder=   False
-      GridLinesHorizontal=   0
-      GridLinesVertical=   0
-      HasHeading      =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      GridLineStyle   =   0
+      HasBorder       =   True
+      HasHeader       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       HeadingIndex    =   -1
       Height          =   471
-      HelpTag         =   ""
-      Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   "#	Name	Total	GP"
@@ -261,32 +253,28 @@ Begin Window MainWindow
       LockRight       =   True
       LockTop         =   True
       RequiresSelection=   False
+      RowSelectionType=   0
       Scope           =   0
-      ScrollbarHorizontal=   False
-      ScrollBarVertical=   True
-      SelectionType   =   0
       TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   46
+      Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   244
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
-   Begin Label BattleLabel
-      AutoDeactivate  =   True
+   Begin DesktopLabel BattleLabel
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   38
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -301,12 +289,11 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   9
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Battle"
-      TextAlign       =   1
+      TextAlignment   =   0
       TextColor       =   &c0000FF00
-      TextFont        =   "System"
-      TextSize        =   32.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   0
       Transparent     =   False
       Underline       =   False
@@ -314,11 +301,11 @@ Begin Window MainWindow
       Width           =   481
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Event
-		Sub Open()
+		Sub Opening()
 		  Setup
 		End Sub
 	#tag EndEvent
@@ -326,20 +313,20 @@ End
 
 	#tag MenuHandler
 		Function FileRestoreLeaderboard() As Boolean Handles FileRestoreLeaderboard.Action
-			RestoreLeaderboard
-			
-			Return True
-			
+		  RestoreLeaderboard
+		  
+		  Return True
+		  
 		End Function
 	#tag EndMenuHandler
 
 
 	#tag Method, Flags = &h21
 		Private Sub AddPlayer(p As ShipInterface)
-		  Dim ai As ShipController
-		  ai = New ShipController(AllPlayers.UBound + 2, BattleCanvas.Width, BattleCanvas.Height, p)
+		  Var ai As ShipController
+		  ai = New ShipController(AllPlayers.LastIndex + 2, BattleCanvas.Width, BattleCanvas.Height, p)
 		  ai.Obstacles = Obstacles
-		  AllPlayers.Append(ai)
+		  AllPlayers.Add(ai)
 		  
 		End Sub
 	#tag EndMethod
@@ -376,14 +363,14 @@ End
 		  Else
 		    ScoreList.Sort
 		    
-		    Dim winner As ShipController = ShipController(ScoreList.RowTag(0))
+		    Var winner As ShipController = ShipController(ScoreList.RowTagAt(0))
 		    // If tied, rank by hits
 		    BattleLabel.Text = "Winner: " + winner.GetName
-		    BattleLabel.HelpTag = BattleLabel.Text
+		    BattleLabel.Tooltip = BattleLabel.Text
 		    
-		    For i As Integer = Players.Ubound DownTo 0
+		    For i As Integer = Players.LastIndex DownTo 0
 		      If Players(i) <> winner Then
-		        Players.Remove(i)
+		        Players.RemoveAt(i)
 		      End If
 		    Next
 		    
@@ -397,14 +384,9 @@ End
 	#tag Method, Flags = &h21
 		Private Sub GenerateStarfield()
 		  For i As Integer = 1 To 50
-		    #If TargetLinux Then
-		      Dim sx As Integer = Rand.InRange(0, BattleCanvas.Width)
-		      Dim sy As Integer = Rand.InRange(0, BattleCanvas.Height)
-		    #Else
-		      Dim sx As Integer = Xojo.Math.RandomInt(0, BattleCanvas.Width)
-		      Dim sy As Integer = Xojo.Math.RandomInt(0, BattleCanvas.Height)
-		    #Endif
-		    StarField(i) = New Xojo.Core.Point(sx, sy)
+		    Var sx As Integer = System.Random.InRange(0, BattleCanvas.Width)
+		    Var sy As Integer = System.Random.InRange(0, BattleCanvas.Height)
+		    StarField(i) = New Point(sx, sy)
 		  Next
 		  
 		End Sub
@@ -413,15 +395,15 @@ End
 	#tag Method, Flags = &h21
 		Private Sub InitLeaderboard()
 		  // Set up initial Leaderboard
-		  LeadersList.DeleteAllRows
+		  LeadersList.RemoveAllRows
 		  
 		  For Each a As ShipController In AllPlayers
 		    LeadersList.AddRow("", a.DisplayName, Str(a.TotalScore), Str(a.GamesPlayed))
-		    LeadersList.RowTag(LeadersList.LastIndex) = a
+		    LeadersList.RowTagAt(LeadersList.LastAddedRowIndex) = a
 		  Next
 		  
-		  LeadersList.SortedColumn = 2
-		  LeadersList.ColumnSortDirection(2) = -1
+		  LeadersList.SortingColumn = 2
+		  LeadersList.ColumnSortDirectionAt(2) = DesktopListBox.SortDirections.Descending
 		  LeadersList.Sort
 		End Sub
 	#tag EndMethod
@@ -431,16 +413,16 @@ End
 		  // Load the leaderboard from saved file and then
 		  // match up players to their entries in the leaderboard
 		  // and restart contest at the appropriate last game number.
-		  Dim lbFile As FolderItem = SpecialFolder.Desktop.Child("Leaderboard.txt")
+		  Var lbFile As FolderItem = SpecialFolder.Desktop.Child("Leaderboard.txt")
 		  
 		  If lbFile <> Nil And lbFile.Exists Then
-		    Dim input As TextInputStream
+		    Var input As TextInputStream
 		    input = TextInputStream.Open(lbFile)
 		    
-		    Dim minGames As Integer = 999
-		    While Not input.EOF
+		    Var minGames As Integer = 999
+		    While Not input.EndOfFile
 		      // Update Player with total score and GP
-		      Dim values() As String = input.ReadLine(Encodings.UTF8).Split(&u09)
+		      Var values() As String = input.ReadLine(Encodings.UTF8).Split(&u09)
 		      
 		      For Each p As ShipController In AllPlayers
 		        If p.GetName = values(0) Then
@@ -463,20 +445,20 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub SelectPlayersForBattle()
-		  Dim battleName As String = "Battle " + Str(CurrentBattle)
+		  Var battleName As String = "Battle " + Str(CurrentBattle)
 		  
 		  // Sort the players by games played, lowest to highest.
 		  AllPlayers.Shuffle
-		  Dim gp() As Integer
+		  Var gp() As Integer
 		  For Each p As ShipController In AllPlayers
-		    gp.Append(p.GamesPlayed)
+		    gp.Add(p.GamesPlayed)
 		  Next
 		  gp.SortWith(AllPlayers)
 		  
 		  If AllPlayers(0).GamesPlayed < kGamesToPlay Then
 		    // Keep playing until all players have played twice
 		    For i As Integer = 0 To 3
-		      Players.Append(AllPlayers(i))
+		      Players.Add(AllPlayers(i))
 		    Next
 		    
 		  Else
@@ -485,16 +467,16 @@ End
 		    
 		    // Play the top four scores.
 		    For i As Integer = 0 To 3
-		      Players.Append(LeadersList.RowTag(i))
+		      Players.Add(LeadersList.RowTagAt(i))
 		    Next
 		    
 		    //If 4th place is tied with 5th place (or later), then take remaining players that are
 		    // tied with 4th place
-		    Dim p As ShipController
-		    For i As Integer = 4 To LeadersList.ListCount - 1
-		      p = ShipController(LeadersList.RowTag(i))
+		    Var p As ShipController
+		    For i As Integer = 4 To LeadersList.LastRowIndex
+		      p = ShipController(LeadersList.RowTagAt(i))
 		      If p.TotalScore = Players(3).TotalScore Then
-		        Players.Append(p)
+		        Players.Add(p)
 		      End If
 		    Next
 		    
@@ -523,65 +505,60 @@ End
 		  fanfareshort.Volume = 50
 		  fanfareshort.Play
 		  
-		  ReDim Players(-1)
+		  Players.RemoveAll
 		  
 		  UpdateLeaderboard
 		  
 		  SelectPlayersForBattle
 		  
-		  ScoreList.DeleteAllRows
+		  ScoreList.RemoveAllRows
 		  
 		  // Create Obstacles
-		  ReDim Obstacles(-1)
-		  Dim wormholes() As WormholeInfo
-		  Dim o As Obstacle
+		  Obstacles.RemoveAll
+		  Var wormholes() As WormholeInfo
+		  Var o As Obstacle
 		  For i As Integer = 1 To 4
-		    #If TargetLinux Then
-		      o = New Obstacle(Rand.InRange(0, BattleCanvas.Width - Obstacle.kWidth), _
-		      Rand.InRange(0, BattleCanvas.Height - Obstacle.kHeight))
-		    #Else
-		      o = New Obstacle(Xojo.Math.RandomInt(0, BattleCanvas.Width - Obstacle.kWidth), _
-		      Xojo.Math.RandomInt(0, BattleCanvas.Height - Obstacle.kHeight))
-		    #Endif
-		    Obstacles.Append(o)
+		    o = New Obstacle(System.Random.InRange(0, BattleCanvas.Width - Obstacle.kWidth), _
+		    System.Random.InRange(0, BattleCanvas.Height - Obstacle.kHeight))
+		    Obstacles.Add(o)
 		    
-		    Dim w As New WormholeInfo
+		    Var w As New WormholeInfo
 		    w.X = o.X
 		    w.Y = o.Y
 		    w.Height = o.Height
 		    w.Width = o.Width
-		    wormholes.Append(w)
+		    wormholes.Add(w)
 		  Next
 		  
 		  // Initialize the ships and score list
-		  Dim shipColor As Integer
+		  Var shipColor As Integer
 		  For Each a As ShipController In Players
 		    a.SetShipColor(shipColor)
 		    shipColor = shipColor + 1
 		    
 		    // Copy wormholes for each player so that they can't modify them for anyone else
-		    Dim whCopy() As WormholeInfo
+		    Var whCopy() As WormholeInfo
 		    For Each c As WormholeInfo In wormholes
-		      Dim w As New WormholeInfo
+		      Var w As New WormholeInfo
 		      w.X = c.X
 		      w.Y = c.Y
 		      w.Height = c.Height
 		      w.Width = c.Width
-		      whCopy.Append(w)
+		      whCopy.Add(w)
 		    Next
 		    
 		    a.GamesPlayed = a.GamesPlayed + 1
 		    a.NewGame(BattleCanvas.Width, BattleCanvas.Height, whCopy)
 		    
 		    ScoreList.AddRow("", a.DisplayName, Str(a.Hits), Str(a.WasHit), Str(a.Hits - a.WasHit))
-		    ScoreList.RowTag(ScoreList.LastIndex) = a
-		    ScoreList.InvalidateCell(ScoreList.LastIndex, 0)
+		    ScoreList.RowTagAt(ScoreList.LastAddedRowIndex) = a
+		    ScoreList.RefreshCell(ScoreList.LastAddedRowIndex, 0)
 		  Next
 		  
 		  GenerateStarfield
 		  
 		  // Start the game
-		  StartTime = Microseconds
+		  StartTime = System.Microseconds
 		  
 		  AITimer.Enabled = True
 		  GameTimer.Enabled = True
@@ -606,7 +583,7 @@ End
 		    p.EndGame
 		  Next
 		  
-		  BattleCanvas.Invalidate(False)
+		  BattleCanvas.Refresh(False)
 		  
 		  StartBattle
 		End Sub
@@ -614,32 +591,32 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub UpdateLeaderboard()
-		  Dim a As ShipController
-		  For i As Integer = 0 To LeadersList.ListCount - 1
-		    a = ShipController(LeadersList.RowTag(i))
-		    LeadersList.Cell(i, 0) = Str(i + 1)
-		    LeadersList.Cell(i, 2) = Str(a.TotalScore)
-		    LeadersList.Cell(i, 3) = Str(a.GamesPlayed)
+		  Var a As ShipController
+		  For i As Integer = 0 To LeadersList.LastRowIndex
+		    a = ShipController(LeadersList.RowTagAt(i))
+		    LeadersList.CellTextAt(i, 0) = Str(i + 1)
+		    LeadersList.CellTextAt(i, 2) = Str(a.TotalScore)
+		    LeadersList.CellTextAt(i, 3) = Str(a.GamesPlayed)
 		  Next
 		  
-		  LeadersList.SortedColumn = 2
-		  LeadersList.ColumnSortDirection(2) = -1
+		  LeadersList.SortingColumn = 2
+		  LeadersList.ColumnSortDirectionAt(2) = DesktopListbox.SortDirections.Descending
 		  LeadersList.Sort
 		  
-		  For i As Integer = 0 To LeadersList.ListCount - 1
-		    a = ShipController(LeadersList.RowTag(i))
-		    LeadersList.Cell(i, 0) = Str(i + 1)
+		  For i As Integer = 0 To LeadersList.LastRowIndex
+		    a = ShipController(LeadersList.RowTagAt(i))
+		    LeadersList.CellTextAt(i, 0) = Str(i + 1)
 		  Next
 		  
 		  // Save leaderboard in case of crash so that it can be restored
-		  Dim lbFile As FolderItem = SpecialFolder.Desktop.Child("Leaderboard.txt")
-		  Dim output As TextOutputStream
+		  Var lbFile As FolderItem = SpecialFolder.Desktop.Child("Leaderboard.txt")
+		  Var output As TextOutputStream
 		  output = TextOutputStream.Create(lbFile)
 		  
-		  Dim p As ShipController
-		  For i As Integer = 0 To LeadersList.ListCount - 1
-		    p = LeadersList.RowTag(i)
-		    output.WriteLine(p.GetName + &u09 + LeadersList.Cell(i, 2) + &u09 + LeadersList.Cell(i, 3))
+		  Var p As ShipController
+		  For i As Integer = 0 To LeadersList.LastRowIndex
+		    p = LeadersList.RowTagAt(i)
+		    output.WriteLine(p.GetName + &u09 + LeadersList.CellTextAt(i, 2) + &u09 + LeadersList.CellTextAt(i, 3))
 		  Next
 		  
 		  output.Close
@@ -672,7 +649,7 @@ End
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private StarField(50) As Xojo.Core.Point
+		Private StarField(50) As Point
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
@@ -688,16 +665,16 @@ End
 
 #tag Events BattleCanvas
 	#tag Event
-		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		Sub Paint(g As Graphics, areas() As Rect)
 		  // Draws everything at the current positions.
 		  
-		  g.ForeColor = &c000000
-		  g.FillRect(0, 0, g.Width, g.Height)
+		  g.DrawingColor = &c000000
+		  g.FillRectangle(0, 0, g.Width, g.Height)
 		  
 		  // Starfield
-		  g.ForeColor = &cffffff
+		  g.DrawingColor = &cffffff
 		  For i As Integer = 1 To 50
-		    g.FillRect(StarField(i).X, StarField(i).Y, 2, 2)
+		    g.FillRectangle(StarField(i).X, StarField(i).Y, 2, 2)
 		  Next
 		  
 		  // Add Obstacles
@@ -748,26 +725,27 @@ End
 		  Next
 		  
 		  // Tell the Canvas to update
-		  BattleCanvas.Invalidate(False)
+		  BattleCanvas.Refresh(False)
 		  
 		  // Update scores
-		  If Players.Ubound >= 0 Then
-		    Dim a As ShipController
-		    For i As Integer = 0 To ScoreList.ListCount - 1
-		      a = ShipController(ScoreList.RowTag(i))
-		      ScoreList.Cell(i, 2) = Str(a.Hits)
-		      ScoreList.Cell(i, 3) = Str(a.WasHit)
-		      ScoreList.Cell(i, 4) = Str(a.Hits - a.WasHit)
+		  If Players.LastIndex >= 0 Then
+		    Var a As ShipController
+		    For i As Integer = 0 To ScoreList.LastRowIndex
+		      a = ShipController(ScoreList.RowTagAt(i))
+		      ScoreList.CellTextAt(i, 2) = Str(a.Hits)
+		      ScoreList.CellTextAt(i, 3) = Str(a.WasHit)
+		      ScoreList.CellTextAt(i, 4) = Str(a.Hits - a.WasHit)
 		      
-		      ScoreList.SortedColumn = 4
-		      ScoreList.ColumnSortDirection(4) = -1
+		      ScoreList.SortingColumn = 4
+		      ScoreList.ColumnSortDirectionAt(4) = DesktopListBox.SortDirections.Descending
+		      ScoreList.Sort
 		    Next
 		  End If
 		  
 		  If Not GameOver Then
-		    Dim elapsedSeconds As Double
+		    Var elapsedSeconds As Double
 		    If StartTime > 0 Then
-		      elapsedSeconds = (Microseconds - StartTime) \ 1000000
+		      elapsedSeconds = (System.Microseconds - StartTime) \ 1000000
 		      GameTimerLabel.Text = Str((kGameSeconds + BonusTime) - elapsedSeconds, "###")
 		    Else
 		      GameTimerLabel.Text = "Ready"
@@ -778,7 +756,7 @@ End
 		        // Stop contest if there is a winner (no ties).
 		        // If there is a tie, then add 10 more seconds and continue
 		        ScoreList.Sort
-		        If Val(ScoreList.Cell(0, 4)) = Val(ScoreList.Cell(1, 4)) Then
+		        If Val(ScoreList.CellTextAt(0, 4)) = Val(ScoreList.CellTextAt(1, 4)) Then
 		          BonusTime = 10
 		          BattleLabel.Text = BattleLabel.Text + " TieBreaker!"
 		        Else
@@ -797,7 +775,7 @@ End
 #tag EndEvents
 #tag Events StartButton
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  StartContest
 		  
 		  
@@ -810,17 +788,17 @@ End
 		  For Each ai As ShipController In Players
 		    // Update position of all other enemies
 		    
-		    Dim allEnemyInfo() As EnemyInfo
+		    Var allEnemyInfo() As EnemyInfo
 		    
 		    For Each enemy As ShipController In Players
 		      If ai <> enemy Then
-		        Dim e As New EnemyInfo
+		        Var e As New EnemyInfo
 		        e.X = enemy.X
 		        e.Y = enemy.Y
 		        e.Direction = enemy.Direction
 		        e.Number = enemy.ShipNum
 		        
-		        Dim m As MissileInfo
+		        Var m As MissileInfo
 		        If enemy.Ship.Missile <> Nil Then
 		          m = New MissileInfo
 		          m.Direction = enemy.Ship.Missile.Direction
@@ -829,7 +807,7 @@ End
 		          e.Missile = m
 		        End If
 		        
-		        allEnemyInfo.Append(e)
+		        allEnemyInfo.Add(e)
 		        
 		      End If
 		    Next
@@ -846,15 +824,15 @@ End
 #tag EndEvents
 #tag Events ScoreList
 	#tag Event
-		Function CellBackgroundPaint(g As Graphics, row As Integer, column As Integer) As Boolean
-		  If row > Me.ListCount-1 Then Return False
+		Function PaintCellBackground(g As Graphics, row As Integer, column As Integer) As Boolean
+		  If row > Me.LastRowIndex Then Return False
 		  
 		  If column = 0 Then
-		    Dim p As ShipController = ShipController(Me.RowTag(row))
+		    Var p As ShipController = ShipController(Me.RowTagAt(row))
 		    
 		    Const kSize As Integer = 30
-		    Dim pic As New Picture(kSize, kSize)
-		    pic.Graphics.FillRect(0, 0,kSize, kSize)
+		    Var pic As New Picture(kSize, kSize)
+		    pic.Graphics.FillRectangle(0, 0,kSize, kSize)
 		    pic.Graphics.DrawPicture(p.Ship.Image, 0, 0, kSize, kSize, 0, 0, kShipSize, kShipSize)
 		    g.DrawPicture(pic, 0, 0)
 		    
@@ -864,19 +842,19 @@ End
 		  
 		  Return False
 		  
-		  Dim p As ShipController = ShipController(Me.RowTag(row))
-		  g.ForeColor = p.ShipColor
-		  g.FillRect(0, 0, g.Width, g.Height)
+		  Var p As ShipController = ShipController(Me.RowTagAt(row))
+		  g.DrawingColor = p.ShipColor
+		  g.FillRectangle(0, 0, g.Width, g.Height)
 		  
 		  Return True
 		End Function
 	#tag EndEvent
 	#tag Event
-		Function CompareRows(row1 as Integer, row2 as Integer, column as Integer, ByRef result as Integer) As Boolean
+		Function RowComparison(row1 as Integer, row2 as Integer, column as Integer, ByRef result as Integer) As Boolean
 		  If column = 4 Then
-		    If Val(Me.Cell(row1, column)) > Val(Me.Cell(row2, column)) Then
+		    If Val(Me.CellTextAt(row1, column)) > Val(Me.CellTextAt(row2, column)) Then
 		      result = 1
-		    ElseIf Val(Me.Cell(row1, column)) < Val(Me.Cell(row2, column)) Then
+		    ElseIf Val(Me.CellTextAt(row1, column)) < Val(Me.CellTextAt(row2, column)) Then
 		      result = -1
 		    Else
 		      result = 0
@@ -886,21 +864,20 @@ End
 		End Function
 	#tag EndEvent
 	#tag Event
-		Sub Open()
-		  Me.ColumnAlignment(2) = ListBox.AlignRight
-		  Me.ColumnAlignment(3) = ListBox.AlignRight
-		  Me.ColumnAlignment(4) = ListBox.AlignRight
-		  
+		Sub Opening()
+		  Me.ColumnAlignmentAt(2) = DesktopListBox.Alignments.Right
+		  Me.ColumnAlignmentAt(3) = DesktopListBox.Alignments.Right
+		  Me.ColumnAlignmentAt(4) = DesktopListBox.Alignments.Right
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events LeadersList
 	#tag Event
-		Function CompareRows(row1 as Integer, row2 as Integer, column as Integer, ByRef result as Integer) As Boolean
+		Function RowComparison(row1 as Integer, row2 as Integer, column as Integer, ByRef result as Integer) As Boolean
 		  If column = 2 Then
-		    If Val(Me.Cell(row1, column)) > Val(Me.Cell(row2, column)) Then
+		    If Val(Me.CellTextAt(row1, column)) > Val(Me.CellTextAt(row2, column)) Then
 		      result = 1
-		    ElseIf Val(Me.Cell(row1, column)) < Val(Me.Cell(row2, column)) Then
+		    ElseIf Val(Me.CellTextAt(row1, column)) < Val(Me.CellTextAt(row2, column)) Then
 		      result = -1
 		    Else
 		      result = 0
@@ -910,21 +887,21 @@ End
 		End Function
 	#tag EndEvent
 	#tag Event
-		Sub Open()
-		  Me.ColumnAlignment(2) = ListBox.AlignRight
-		  Me.ColumnAlignment(3) = ListBox.AlignRight
+		Sub Opening()
+		  Me.ColumnAlignmentAt(2) = DesktopListBox.Alignments.Right
+		  Me.ColumnAlignmentAt(3) = DesktopListBox.Alignments.Right
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
-		Function CellBackgroundPaint(g As Graphics, row As Integer, column As Integer) As Boolean
-		  Return False
+		Function PaintCellBackground(g As Graphics, row As Integer, column As Integer) As Boolean
+		  // Return False
 		  
-		  If row > Me.ListCount-1 Then Return False
+		  If row > Me.LastRowIndex Then Return False
 		  
-		  Dim p As ShipController = ShipController(Me.RowTag(row))
-		  g.ForeColor = p.ShipColor
-		  g.FillRect(0, 0, g.Width, g.Height)
+		  Var p As ShipController = ShipController(Me.RowTagAt(row))
+		  g.DrawingColor = p.ShipColor
+		  g.FillRectangle(0, 0, g.Width, g.Height)
 		  
 		  Return True
 		End Function
@@ -932,40 +909,51 @@ End
 #tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
-		Name="BackColor"
+		Name="HasTitleBar"
 		Visible=true
-		Group="Appearance"
-		InitialValue="&hFFFFFF"
-		Type="Color"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Backdrop"
-		Visible=true
-		Group="Appearance"
-		Type="Picture"
-		EditorType="Picture"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="CloseButton"
-		Visible=true
-		Group="Appearance"
+		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Composite"
+		Name="MinimumWidth"
 		Visible=true
-		Group="Appearance"
-		InitialValue="False"
-		Type="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Frame"
-		Visible=true
-		Group="Appearance"
-		InitialValue="0"
+		Group="Size"
+		InitialValue="64"
 		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MinimumHeight"
+		Visible=true
+		Group="Size"
+		InitialValue="64"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MaximumWidth"
+		Visible=true
+		Group="Size"
+		InitialValue="32000"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MaximumHeight"
+		Visible=true
+		Group="Size"
+		InitialValue="32000"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Type"
+		Visible=true
+		Group="Frame"
+		InitialValue="0"
+		Type="Types"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Document"
@@ -977,141 +965,47 @@ End
 			"6 - Rounded Window"
 			"7 - Global Floating Window"
 			"8 - Sheet Window"
-			"9 - Metal Window"
-			"10 - Drawer Window"
-			"11 - Modeless Dialog"
+			"9 - Modeless Dialog"
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="FullScreen"
-		Group="Appearance"
-		InitialValue="False"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="FullScreenButton"
+		Name="HasCloseButton"
 		Visible=true
-		Group="Appearance"
-		InitialValue="False"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="HasBackColor"
-		Visible=true
-		Group="Appearance"
-		InitialValue="False"
-		Type="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Height"
-		Visible=true
-		Group="Position"
-		InitialValue="400"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="ImplicitInstance"
-		Visible=true
-		Group="Appearance"
+		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Interfaces"
+		Name="HasMaximizeButton"
 		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="LiveResize"
-		Visible=true
-		Group="Appearance"
+		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MacProcID"
+		Name="HasMinimizeButton"
 		Visible=true
-		Group="Appearance"
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasFullScreenButton"
+		Visible=true
+		Group="Frame"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="DefaultLocation"
+		Visible=true
+		Group="Behavior"
 		InitialValue="0"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MaxHeight"
-		Visible=true
-		Group="Position"
-		InitialValue="32000"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MaximizeButton"
-		Visible=true
-		Group="Appearance"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MaxWidth"
-		Visible=true
-		Group="Position"
-		InitialValue="32000"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MenuBar"
-		Visible=true
-		Group="Appearance"
-		Type="MenuBar"
-		EditorType="MenuBar"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MenuBarVisible"
-		Group="Appearance"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MinHeight"
-		Visible=true
-		Group="Position"
-		InitialValue="64"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MinimizeButton"
-		Visible=true
-		Group="Appearance"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MinWidth"
-		Visible=true
-		Group="Position"
-		InitialValue="64"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Name"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Placement"
-		Visible=true
-		Group="Position"
-		InitialValue="0"
-		Type="Integer"
+		Type="Locations"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Default"
@@ -1122,19 +1016,116 @@ End
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
+		Name="HasBackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="BackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="&hFFFFFF"
+		Type="ColorGroup"
+		EditorType="ColorGroup"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Backdrop"
+		Visible=true
+		Group="Appearance"
+		InitialValue=""
+		Type="Picture"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Composite"
+		Visible=true
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="FullScreen"
+		Visible=false
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Position"
+		InitialValue="400"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="ImplicitInstance"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Interfaces"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MacProcID"
+		Visible=true
+		Group="Appearance"
+		InitialValue="0"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MenuBar"
+		Visible=true
+		Group="Appearance"
+		InitialValue=""
+		Type="DesktopMenuBar"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MenuBarVisible"
+		Visible=false
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Name"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
 		Name="Resizeable"
 		Visible=true
 		Group="Appearance"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Super"
 		Visible=true
 		Group="ID"
+		InitialValue=""
 		Type="String"
-		EditorType="String"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Title"
@@ -1142,6 +1133,7 @@ End
 		Group="Appearance"
 		InitialValue="Untitled"
 		Type="String"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Visible"
@@ -1149,7 +1141,7 @@ End
 		Group="Appearance"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Width"
@@ -1157,5 +1149,6 @@ End
 		Group="Position"
 		InitialValue="600"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 #tag EndViewBehavior

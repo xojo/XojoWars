@@ -2,7 +2,7 @@
 Protected Class AnimatedEffect
 	#tag Method, Flags = &h0
 		Sub Constructor(frames As Picture, x As Integer, y as Integer, duration As Double)
-		  mStartTime = Microseconds * 0.000001
+		  mStartTime = System.Microseconds * 0.000001
 		  mDuration = duration
 		  mFrames = frames
 		  mX = x
@@ -13,10 +13,10 @@ Protected Class AnimatedEffect
 
 	#tag Method, Flags = &h0
 		Sub Draw(g As Graphics)
-		  Dim now As Double = Microseconds * 0.000001
-		  Dim frameSize As Integer = mFrames.Width
-		  Dim qtyFrames As Integer = mFrames.Height / frameSize
-		  Dim curFrame As Integer = (now - mStartTime) / mDuration * qtyFrames
+		  Var now As Double = System.Microseconds * 0.000001
+		  Var frameSize As Integer = mFrames.Width
+		  Var qtyFrames As Integer = mFrames.Height / frameSize
+		  Var curFrame As Integer = (now - mStartTime) / mDuration * qtyFrames
 		  if curFrame >= qtyFrames then
 		    Done = true
 		  else
@@ -56,8 +56,11 @@ Protected Class AnimatedEffect
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="Done"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Boolean"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Index"
@@ -65,6 +68,7 @@ Protected Class AnimatedEffect
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -72,18 +76,23 @@ Protected Class AnimatedEffect
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -91,6 +100,7 @@ Protected Class AnimatedEffect
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

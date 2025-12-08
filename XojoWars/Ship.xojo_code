@@ -20,7 +20,7 @@ Protected Class Ship
 		  
 		  ShipColor = c
 		  
-		  Dim rotations As Integer = App.Randomizer.InRange(1, 8)
+		  Var rotations As Integer = App.Randomizer.InRange(1, 8)
 		  For r As Integer = 1 To rotations
 		    RotateRight
 		  Next
@@ -35,13 +35,13 @@ Protected Class Ship
 		    DrawShip
 		  End If
 		  
-		  Dim ship As New Group2D
+		  Var ship As New Group2D
 		  
-		  Dim s As New PixmapShape(Image)
-		  ship.Append(s)
+		  Var s As New PixmapShape(Image)
+		  ship.AddObject(s)
 		  
 		  // // Put the ship number in the center
-		  // Dim num As New StringShape
+		  // Var num As New StringShape
 		  // num.Text = Str(Number)
 		  // num.X = -2
 		  // num.Y = 1
@@ -76,54 +76,56 @@ Protected Class Ship
 
 	#tag Method, Flags = &h0
 		Sub DrawShip()
-		  Dim shipPic As New Picture(kSize, kSize)
+		  Var shipPic As New Picture(kSize, kSize)
 		  
-		  Dim g As Graphics = shipPic.Graphics
-		  g.ForeColor = ShipColor
+		  Var g As Graphics = shipPic.Graphics
+		  g.DrawingColor = ShipColor
 		  
 		  // Main body
-		  g.FillRect(6, 15, 24, 12)
+		  g.FillRectangle(6, 15, 24, 12)
 		  
 		  // Cockpit
-		  Dim cp(8) As Integer
-		  cp(1) = 30
-		  cp(2) = 15
-		  cp(3) = 40
-		  cp(4) = 18
-		  cp(5) = 40
-		  cp(6) = 24
-		  cp(7) = 30
-		  cp(8) = 27
-		  g.FillPolygon(cp)
+		  // Var cp(8) As Integer
+		  // cp(1) = 30
+		  // cp(2) = 15
+		  // cp(3) = 40
+		  // cp(4) = 18
+		  // cp(5) = 40
+		  // cp(6) = 24
+		  // cp(7) = 30
+		  // cp(8) = 27
+		  // g.FillPolygon(cp)
+		  
+		  Var cockpit As New GraphicsPath
+		  cockpit.MoveToPoint(30, 15)
+		  cockpit.AddLineToPoint(40, 18)
+		  cockpit.AddLineToPoint(40, 24)
+		  cockpit.AddLineToPoint(30, 27)
+		  g.FillPath(cockpit)
 		  
 		  // Left wing bottom
-		  g.FillRect(4, 3, 10, 12)
+		  g.FillRectangle(4, 3, 10, 12)
 		  
 		  // Right wing bottom
-		  g.FillRect(4, 27, 10, 12)
+		  g.FillRectangle(4, 27, 10, 12)
 		  
 		  // Left wing
-		  Dim wing(6) As Integer
-		  wing(1) = 14
-		  wing(2) = 3
-		  wing(3) = 30
-		  wing(4) = 12
-		  wing(5) = 14
-		  wing(6) = 12
-		  g.FillPolygon(wing)
+		  Var leftWing As New GraphicsPath
+		  leftWing.MoveToPoint(14, 3)
+		  leftWing.AddLineToPoint(30, 12)
+		  leftWing.AddLineToPoint(14, 12)
+		  g.FillPath(leftWing)
 		  
 		  // Right wing
-		  wing(1) = 14
-		  wing(2) = 30
-		  wing(3) = 30
-		  wing(4) = 30
-		  wing(5) = 14
-		  wing(6) = 38
-		  g.FillPolygon(wing)
+		  Var rightWing As New GraphicsPath
+		  rightWing.MoveToPoint(14, 30)
+		  rightWing.AddLineToPoint(30, 30)
+		  rightWing.AddLineToPoint(14, 38)
+		  g.FillPath(rightWing)
 		  
-		  g.ForeColor = &c000000
+		  g.DrawingColor = &c000000
 		  g.Bold = True
-		  g.DrawString(Str(Number), 14, 25)
+		  g.DrawText(Str(Number), 14, 25)
 		  
 		  Image = shipPic
 		End Sub
@@ -182,10 +184,10 @@ Protected Class Ship
 		Function IsHitBy(m As Missile) As Boolean
 		  // If missile hits the ship, then move it to another location
 		  
-		  Dim shipRect As New Xojo.Core.Rect(X, Y, kSize, kSize)
-		  Dim missileRect As New Xojo.Core.Rect(m.X, m.Y, m.kHeight, m.kWidth)
+		  Var shipRect As New Rect(X, Y, kSize, kSize)
+		  Var missileRect As New Rect(m.X, m.Y, m.kHeight, m.kWidth)
 		  
-		  If shipRect.Intersection(missileRect) <> Nil Then
+		  If shipRect.Intersects(missileRect) Then
 		    BlastSound.Play
 		    Explosion = New AnimatedEffect(explosionFrames, X, Y, 1.0)
 		    
@@ -200,10 +202,10 @@ Protected Class Ship
 
 	#tag Method, Flags = &h0
 		Function IsObstacle(o As Obstacle) As Boolean
-		  Dim shipRect As New Xojo.Core.Rect(X - 5, Y - 5, kSize - 10, kSize - 10)
-		  Dim oRect As New Xojo.Core.Rect(o.X, o.Y, o.kHeight, o.kWidth)
+		  Var shipRect As New Rect(X - 5, Y - 5, kSize - 10, kSize - 10)
+		  Var oRect As New Rect(o.X, o.Y, o.kHeight, o.kWidth)
 		  
-		  If shipRect.Intersection(oRect) <> Nil Then
+		  If shipRect.Intersects(oRect) Then
 		    Return True
 		  Else
 		    Return False
@@ -233,10 +235,10 @@ Protected Class Ship
 
 	#tag Method, Flags = &h0
 		Sub SetRandomPosition(playSound As Boolean = False)
-		  Dim xPos As Integer = App.Randomizer.InRange(kShipSize, RightMargin - kShipSize)
+		  Var xPos As Integer = App.Randomizer.InRange(kShipSize, RightMargin - kShipSize)
 		  xPos = (xPos \ kShipSize) * kShipSize
 		  
-		  Dim yPos As Integer = App.Randomizer.InRange(kShipSize, BottomMargin - kShipSize)
+		  Var yPos As Integer = App.Randomizer.InRange(kShipSize, BottomMargin - kShipSize)
 		  yPos = (yPos \ kShipSize) * kShipSize
 		  
 		  Self.X = xPos
@@ -358,13 +360,19 @@ Protected Class Ship
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="HitCount"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Image"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Picture"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Index"
@@ -372,6 +380,7 @@ Protected Class Ship
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -379,34 +388,47 @@ Protected Class Ship
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Number"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Rotation"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="ShipColor"
+			Visible=false
 			Group="Behavior"
 			InitialValue="&c000000"
 			Type="Color"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -414,26 +436,39 @@ Protected Class Ship
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="TotalScore"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="WasHitCount"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="X"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Y"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

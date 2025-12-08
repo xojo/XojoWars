@@ -83,7 +83,7 @@ Protected Class ShipController
 		      // If missile hits obstacle then it goes away
 		      For Each o As Obstacle In Obstacles
 		        If mShip.Missile <> Nil Then
-		          If mShip.Missile.Rect.Intersection(o.Rect) <> Nil Then
+		          If mShip.Missile.Rect.Intersects(o.Rect) Then
 		            mShip.Missile = Nil
 		          End If
 		        End If
@@ -112,7 +112,7 @@ Protected Class ShipController
 		  ShipThread.Enemies = Enemies
 		  ShipThread.GameActive = True
 		  #If TargetMacOS Then
-		    ShipThread.Run
+		    ShipThread.Start
 		  #Endif
 		End Sub
 	#tag EndMethod
@@ -136,7 +136,7 @@ Protected Class ShipController
 		  'mShip.Forward
 		  
 		  // Handle the rotation
-		  Dim r As RotationTypes = Driver.Rotate(mShip.X, mShip.Y, Direction, MissileInAir, Enemies)
+		  Var r As RotationTypes = Driver.Rotate(mShip.X, mShip.Y, Direction, MissileInAir, Enemies)
 		  Select Case r
 		  Case RotationTypes.Left
 		    mShip.RotateLeft
@@ -163,7 +163,7 @@ Protected Class ShipController
 
 	#tag Method, Flags = &h0
 		Sub SetShipColor(value As Integer)
-		  Dim colors() As Color = Array(&cf20016, _ // red
+		  Var colors() As Color = Array(&cf20016, _ // red
 		  &cf48017, _ // orange
 		  &cfbff1d, _ // yellow
 		  &c4dff0e, _ // green
@@ -173,15 +173,11 @@ Protected Class ShipController
 		  &c8600ff, _ // purple
 		  &cf888888) // gray
 		  
-		  Dim c As Color
-		  If value <= colors.UBound Then
+		  Var c As Color
+		  If value <= colors.LastIndex Then
 		    c = colors(value)
 		  Else
-		    #If TargetLinux Then
-		      c = colors(Rand.InRange(0, colors.UBound))
-		    #Else
-		      c = colors(Xojo.Math.RandomInt(0, colors.UBound))
-		    #Endif
+		    c = colors(System.Random.InRange(0, colors.LastIndex))
 		  End If
 		  
 		  mShip.ShipColor = c
@@ -324,7 +320,7 @@ Protected Class ShipController
 		#tag EndGetter
 		#tag Setter
 			Set
-			  // Dim colors() As Color = Array(&c000000, &cf20016, _ // red
+			  // Var colors() As Color = Array(&c000000, &cf20016, _ // red
 			  // &cf48017, _ // orange
 			  // &cfbff1d, _ // yellow
 			  // &c4dff0e, _ // green
@@ -334,7 +330,7 @@ Protected Class ShipController
 			  // &c8600ff, _ // purple
 			  // &cf888888) // gray
 			  //
-			  // Dim c As Color
+			  // Var c As Color
 			  // If value <= colors.UBound Then
 			  // c = colors(value)
 			  // Else
@@ -402,12 +398,17 @@ Protected Class ShipController
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="BottomMargin"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Direction"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Directions"
 			EditorType="Enum"
 			#tag EnumValues
@@ -423,25 +424,35 @@ Protected Class ShipController
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="DisplayName"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="GamesPlayed"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="GetName"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Hits"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Index"
@@ -449,6 +460,7 @@ Protected Class ShipController
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -456,34 +468,47 @@ Protected Class ShipController
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="RightMargin"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="ShipColor"
+			Visible=false
 			Group="Behavior"
 			InitialValue="&c000000"
 			Type="Color"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="ShipNum"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -491,26 +516,39 @@ Protected Class ShipController
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="TotalScore"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="WasHit"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="X"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Y"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

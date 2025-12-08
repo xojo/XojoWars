@@ -104,8 +104,8 @@ Protected Interface ShipInterface
 		
 		=====
 		
-		Microseconds
-		A global instance of Microseconds (based off of Milliseconds).
+		System.Microseconds
+		A global instance of System.Microseconds (based off of Milliseconds).
 		
 		
 	#tag EndNote
@@ -118,6 +118,7 @@ Protected Interface ShipInterface
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -125,18 +126,23 @@ Protected Interface ShipInterface
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -144,6 +150,7 @@ Protected Interface ShipInterface
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Interface
